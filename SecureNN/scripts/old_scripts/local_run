@@ -1,0 +1,52 @@
+
+
+# ./BMRPassive.out 3 files/parties_localhost files/keyD files/mnist/mnist_train_data_13 files/mnist/mnist_train_labels_13 files/sharedkey23 &>/dev/null &
+# ./BMRPassive.out 2 files/parties_localhost files/keyC files/mnist/mnist_train_data_02 files/mnist/mnist_train_labels_02 files/sharedkey23 &>/dev/null &
+# ./BMRPassive.out 1 files/parties_localhost files/keyB files/mnist/mnist_train_data_13 files/mnist/mnist_train_labels_13 files/sharedkey01 &>/dev/null &
+# ./BMRPassive.out 0 files/parties_localhost files/keyA files/mnist/mnist_train_data_02 files/mnist/mnist_train_labels_02 files/sharedkey01 &
+
+# xterm -geometry 80x27+0+0 -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 3 files/parties_localhost files/keyD files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# xterm -geometry 80x27+0+0 -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 2 files/parties_localhost files/keyC files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# xterm -geometry 80x27+80+27 -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 1 files/parties_localhost files/keyB files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# xterm -geometry 80x27+80+27 -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 0 files/parties_localhost files/keyA files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+
+
+
+
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 3 files/parties_localhost files/keyD files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# # ./BMRPassive.out 3 files/parties_localhost files/keyD files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD &>/dev/null &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 2 files/parties_localhost files/keyC files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# # ./BMRPassive.out 2 files/parties_localhost files/keyC files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC &>/dev/null &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 1 files/parties_localhost files/keyB files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# # ./BMRPassive.out 1 files/parties_localhost files/keyB files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD &>/dev/null &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 0 files/parties_localhost files/keyA files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# # ./BMRPassive.out 0 files/parties_localhost files/keyA files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC &>/dev/null &
+
+
+
+# ############################# 4PC XTERM WINDOWS ALL FOUR #############################
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 3 files/parties_localhost files/keyD files/keyCD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 2 files/parties_localhost files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 1 files/parties_localhost files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 0 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# ######################################################################################
+
+# ############################ 4PC XTERM WINDOWS ONLY FOR 0,1 #############################
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 0 files/parties_localhost files/keyA files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+# xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 4PC 1 files/parties_localhost files/keyB files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+# {
+# 	./BMRPassive.out 4PC 2 files/parties_localhost files/keyC files/keyAC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC &
+# 	./BMRPassive.out 4PC 3 files/parties_localhost files/keyD files/keyBD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD &
+# } > /dev/null 
+# #####################################################################################
+
+
+
+############################# 4PC XTERM WINDOWS ALL FOUR #############################
+xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 3PC 2 files/parties_localhost files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 3PC 1 files/parties_localhost files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD" &
+xterm -ls -xrm 'XTerm*selectToClipboard:true' -hold -e "./BMRPassive.out 3PC 0 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC" &
+######################################################################################
+
+
+echo "Finished"

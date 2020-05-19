@@ -1,0 +1,92 @@
+
+PARTY_NUM=0;
+MODE="THREE";
+NETWORK="WAN";
+
+if [[ "$NETWORK" == "LH" ]]
+then
+	if [[ "$MODE" == "FOUR" ]]
+	then
+		./BMRPassive.out 4PC 3 files/parties_localhost files/keyD files/keyCD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time3.txt &
+		./BMRPassive.out 4PC 2 files/parties_localhost files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time2.txt &
+		./BMRPassive.out 4PC 1 files/parties_localhost files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time1.txt &
+		./BMRPassive.out 4PC 0 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time0.txt &
+	elif [[ "$MODE" == "THREE" ]]
+	then
+		./BMRPassive.out 3PC 2 files/parties_localhost files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC >./output/time2.txt &
+		./BMRPassive.out 3PC 1 files/parties_localhost files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD >./output/time1.txt &
+		./BMRPassive.out 3PC 0 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC >./output/time0.txt &
+	elif [[ "$MODE" == "SA" ]]
+	then
+		./BMRPassive.out STANDALONE 4 files/parties_localhost files/keyA files/keyAB files/data/mnist_data_8_samples files/data/mnist_labels_8_samples files/data/mnist_data_8_samples files/data/mnist_labels_8_samples 1>./output/time4.txt
+	fi
+elif [[ "$NETWORK" == "LAN" ]] 
+then
+	if [[ "$MODE" == "FOUR" ]]
+	then
+		if [ $PARTY_NUM == 3 ]
+		then
+			./BMRPassive.out 4PC 3 files/parties_LAN files/keyD files/keyCD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time3.txt
+		elif [ $PARTY_NUM == 2 ]
+		then
+			./BMRPassive.out 4PC 2 files/parties_LAN files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time2.txt
+		elif [ $PARTY_NUM == 1 ]
+		then
+			./BMRPassive.out 4PC 1 files/parties_LAN files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time1.txt
+		elif [ $PARTY_NUM == 0 ]
+		then
+			./BMRPassive.out 4PC 0 files/parties_LAN files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time0.txt
+		fi
+	elif [[ "$MODE" == "THREE" ]]
+	then
+		if [ $PARTY_NUM == 2 ]
+		then
+			./BMRPassive.out 3PC 2 files/parties_LAN files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time2.txt
+		elif [ $PARTY_NUM == 1 ]
+		then
+			./BMRPassive.out 3PC 1 files/parties_LAN files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time1.txt
+		elif [ $PARTY_NUM == 0 ]
+		then
+			./BMRPassive.out 3PC 0 files/parties_LAN files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time0.txt
+		fi
+	elif [[ "$MODE" == "SA" ]]
+	then
+		./BMRPassive.out STANDALONE 4 files/parties_LAN files/keyA files/keyAB files/data/mnist_data_8_samples files/data/mnist_labels_8_samples files/data/mnist_data_8_samples files/data/mnist_labels_8_samples 1>./output/time4.txt
+	fi
+elif [[ "$NETWORK" == "WAN" ]]
+then
+	if [[ "$MODE" == "FOUR" ]]
+	then
+		if [ $PARTY_NUM == 3 ]
+		then
+			./BMRPassive.out 4PC 3 files/parties_WAN_4PC files/keyD files/keyCD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time3.txt
+		elif [ $PARTY_NUM == 2 ]
+		then
+			./BMRPassive.out 4PC 2 files/parties_WAN_4PC files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time2.txt
+		elif [ $PARTY_NUM == 1 ]
+		then
+			./BMRPassive.out 4PC 1 files/parties_WAN_4PC files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time1.txt
+		elif [ $PARTY_NUM == 0 ]
+		then
+			./BMRPassive.out 4PC 0 files/parties_WAN_4PC files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time0.txt
+		fi
+	elif [[ "$MODE" == "THREE" ]]
+	then
+		if [ $PARTY_NUM == 2 ]
+		then
+			./BMRPassive.out 3PC 2 files/parties_WAN_3PC files/keyC files/keyCD files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time2.txt
+		elif [ $PARTY_NUM == 1 ]
+		then
+			./BMRPassive.out 3PC 1 files/parties_WAN_3PC files/keyB files/keyAB files/data/mnist_data_8_BD files/data/mnist_labels_8_BD files/data/mnist_data_8_BD files/data/mnist_labels_8_BD 1>./output/time1.txt
+		elif [ $PARTY_NUM == 0 ]
+		then
+			./BMRPassive.out 3PC 0 files/parties_WAN_3PC files/keyA files/keyAB files/data/mnist_data_8_AC files/data/mnist_labels_8_AC files/data/mnist_data_8_AC files/data/mnist_labels_8_AC 1>./output/time0.txt
+		fi
+	elif [[ "$MODE" == "SA" ]]
+	then
+		./BMRPassive.out STANDALONE 4 files/parties_WAN_3PC files/keyA files/keyAB files/data/mnist_data_8_samples files/data/mnist_labels_8_samples files/data/mnist_data_8_samples files/data/mnist_labels_8_samples 1>./output/time4.txt
+	fi
+fi
+
+wait
+echo "$MODE PC code on $NETWORK completed"

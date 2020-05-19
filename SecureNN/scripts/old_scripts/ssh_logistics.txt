@@ -1,0 +1,3 @@
+ssh securecomputeadmin@13.66.189.58 mkdir -p .ssh
+
+cat /home/snwagh/.ssh/id_rsa.pub | ssh securecomputeadmin@13.66.189.58 'cat >> .ssh/authorized_keys'
